@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luma — Votre calendrier moderne pour Linux</title>
+    <meta name="description" content="Luma est un calendrier élégant et moderne pour Linux. Synchronisation CalDAV, vues Mois/Semaine/Jour, rappels et une interface native GTK4.">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" type="image/svg+xml" href="assets/coati.luma.svg">
+
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/coatimundi-logo-200.png" alt="CoatiMundi" class="logo-img">
+                </a>
+
+                <button class="nav-toggle" aria-label="Menu">☰</button>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+                    <li><a href="nuntia.html" data-i18n="nav_nuntia">Nuntia</a></li>
+                    <li><a href="luma.html" data-i18n="nav_luma" class="active">Luma</a></li>
+                    <li><a href="endura.html" data-i18n="nav_endura">Endura</a></li>
+                    <li><a href="lumina.html" data-i18n="nav_lumina">Lumina</a></li>
+                    <li><a href="https://github.com/coatimundiapps" target="_blank" rel="noopener">GitHub ↗</a></li>
+                </ul>
+
+                <div class="lang-selector">
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="zh">中</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-icon-container reveal">
+                <img src="assets/coati.luma.svg" alt="Icône Luma" class="hero-icon">
+            </div>
+
+            <h1 class="reveal" style="--d:.08s" data-i18n="hero_title">Luma</h1>
+            <p class="reveal" style="--d:.14s" data-i18n="hero_subtitle"></p>
+
+            <div class="hero-buttons reveal" style="--d:.2s">
+                <a href="#features" class="btn btn-primary" data-i18n="hero_btn_features">Découvrir les fonctionnalités</a>
+                <a href="#install" class="btn btn-secondary" data-i18n="hero_btn_install">Installation</a>
+                <a href="https://github.com/coatimundiapps/Luma/issues" class="btn btn-secondary" target="_blank" rel="noopener" data-i18n="footer_bug">Signaler un bug</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="features_title"></h2>
+                <p data-i18n="features_subtitle"></p>
+            </div>
+
+            <div class="feature-row reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature1_title">Trois vues, une seule application</h3>
+                    <p data-i18n="feature1_desc">Basculez instantanément entre la vue Mois (pour la vue d'ensemble), Semaine (pour planifier) et Jour (pour le détail). Chaque vue est pensée pour être lisible et réactive.</p>
+                    <ul>
+                        <li data-i18n="feature1_li1">Vue Mois avec les événements en un coup d'œil</li>
+                        <li data-i18n="feature1_li2">Vue Semaine avec grille horaire précise</li>
+                        <li data-i18n="feature1_li3">Vue Jour pour se concentrer sur l'essentiel</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-luma-month-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-luma-month-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-luma-month-light.png" alt="Vue Mois de Luma" class="screenshot" data-target="screenshot-luma-month">
+                </div>
+            </div>
+
+            <div class="feature-row reverse reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature2_title">Déplacez vos événements en un clin d'œil</h3>
+                    <p data-i18n="feature2_desc">Glissez une bulle d'événement pour changer son heure, sa durée ou même son jour. Une ligne de guidage et une surbrillance vous indiquent exactement où l'événement va atterrir.</p>
+                    <ul>
+                        <li data-i18n="feature2_li1">Drag & drop dans toutes les vues</li>
+                        <li data-i18n="feature2_li2">Ligne de guidage au pixel près</li>
+                        <li data-i18n="feature2_li3">Surbrillance colorée de la zone cible</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-luma-week-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-luma-week-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-luma-week-light.png" alt="Vue Semaine de Luma" class="screenshot" data-target="screenshot-luma-week">
+                </div>
+            </div>
+
+            <div class="feature-row reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature3_title">Synchronisation CalDAV native</h3>
+                    <p data-i18n="feature3_desc">Connectez tous vos calendriers CalDAV (Nextcloud, Baïkal, Radicale…) et retrouvez vos événements partout. Les modifications sont sauvegardées immédiatement et synchronisées en arrière-plan.</p>
+                    <ul>
+                        <li data-i18n="feature3_li1">Multi-comptes et multi-calendriers</li>
+                        <li data-i18n="feature3_li2">Abonnements .ics</li>
+                        <li data-i18n="feature3_li3">Cache local pour un démarrage instantané</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-luma-sync-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-luma-sync-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-luma-sync-light.png" alt="Synchronisation CalDAV de Luma" class="screenshot" data-target="screenshot-luma-sync">
+                </div>
+            </div>
+
+            <div class="feature-row reverse reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature4_title">Recherche instantanée et rappels</h3>
+                    <p data-i18n="feature4_desc">Trouvez un événement en un clin d'œil grâce à la recherche globale. Programmez des rappels pour ne plus rien manquer, et organisez vos calendriers par catégories colorées.</p>
+                    <ul>
+                        <li data-i18n="feature4_li1">Recherche dans le titre et la description</li>
+                        <li data-i18n="feature4_li2">Rappels personnalisables</li>
+                        <li data-i18n="feature4_li3">Catégories et couleurs personnalisées</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-luma-search-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-luma-search-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-luma-search-light.png" alt="Recherche dans Luma" class="screenshot" data-target="screenshot-luma-search">
+                </div>
+            </div>
+
+            <div class="feature-row reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature5_title">Une interface native GTK4</h3>
+                    <p data-i18n="feature5_desc">Luma est construit avec GTK4 et libadwaita, pour une intégration parfaite avec Deepin et les environnements de bureau modernes. Thème clair, sombre, et respect de la couleur d'accent du système.</p>
+                    <ul>
+                        <li data-i18n="feature5_li1">Thème clair / sombre automatique</li>
+                        <li data-i18n="feature5_li2">Couleur d'accent Deepin</li>
+                        <li data-i18n="feature5_li3">Icône dynamique avec la date du jour</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-luma-settings-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-luma-settings-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-luma-settings-light.png" alt="Réglages de Luma" class="screenshot" data-target="screenshot-luma-settings">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INSTALL ===== -->
+    <section id="install" class="install">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="install_title">Installation en 2 minutes</h2>
+                <h2>(Soon)</h2>
+                <p data-i18n="install_subtitle"></p>
+            </div>
+
+            <div class="code-block reveal">
+                <pre><code># 1. Télécharger le paquet
+https://github.com/coatimundiapps/Luma/releases/latest/
+
+# 2. L'installer
+sudo dpkg -i luma_0.7.0_all.deb
+
+# 3. Corriger les dépendances si nécessaire
+sudo apt install -f</code></pre>
+            </div>
+
+            <p class="install-note reveal" data-i18n="install_note"></p>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="contact_title">Contact</h2>
+                <p data-i18n="contact_desc"></p>
+            </div>
+            <div class="reveal">
+                <a href="https://github.com/coatimundiapps/Luma/issues" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="contact_btn">Ouvrir un ticket sur GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/coatimundi-logo.png" alt="CoatiMundi" class="footer-logo">
+                    <p data-i18n="footer_license"></p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/coatimundiapps/Luma" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://github.com/coatimundiapps/Luma/issues" target="_blank" rel="noopener" data-i18n="footer_bug">Signaler un bug</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Capture d'écran agrandie">
+    </div>
+
+    <script src="js/i18n-luma.js"></script>
+    <script src="js/site2.js"></script>
+</body>
+</html>

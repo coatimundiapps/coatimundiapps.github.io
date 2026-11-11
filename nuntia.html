@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuntia — Votre client mail simple et élégant pour Deepin</title>
+    <meta name="description" content="Nuntia est un client mail moderne pour Deepin Linux, écrit en Python et GTK3. Support IMAP/SMTP, multi-comptes, filtres avancés, détection de phishing à 3 niveaux, 8 langues.">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" type="image/png" href="assets/nuntia-icon.png">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/coatimundi-logo-200.png" alt="CoatiMundi" class="logo-img">
+                </a>
+
+                <button class="nav-toggle" aria-label="Menu">☰</button>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+                    <li><a href="nuntia.html" data-i18n="nav_nuntia" class="active">Nuntia</a></li>
+                    <li><a href="luma.html" data-i18n="nav_luma">Luma</a></li>
+                    <li><a href="endura.html" data-i18n="nav_endura">Endura</a></li>
+                    <li><a href="lumina.html" data-i18n="nav_lumina">Lumina</a></li>
+                    <li><a href="luma.html" data-i18n="nav_luma">Luma</a></li>
+                    <li><a href="https://github.com/coatimundiapps" target="_blank" rel="noopener">GitHub ↗</a></li>
+                </ul>
+
+                <div class="lang-selector">
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="zh">中</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-icon-container reveal">
+                <img src="assets/nuntia-icon.png" alt="Icône Nuntia" class="hero-icon">
+            </div>
+
+            <h1 class="reveal" style="--d:.08s" data-i18n="hero_title">Nuntia</h1>
+            <p class="reveal" style="--d:.14s" data-i18n="hero_subtitle"></p>
+
+            <div class="hero-buttons reveal" style="--d:.2s">
+                <a href="#features" class="btn btn-primary" data-i18n="hero_btn_features">Découvrir les fonctionnalités</a>
+                <a href="#install" class="btn btn-secondary" data-i18n="hero_btn_install">Installation</a>
+                <a href="https://github.com/coatimundiapps/Nuntia/issues" class="btn btn-secondary" target="_blank" rel="noopener" data-i18n="footer_bug">Signaler un bug</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="features_title"></h2>
+                <p data-i18n="features_subtitle"></p>
+            </div>
+
+            <div class="feature-row reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature1_title">Multi-comptes</h3>
+                    <p data-i18n="feature1_desc">Gérez plusieurs boîtes mail (Infomaniak, iCloud, Gmail, Outlook, tout serveur IMAP/SMTP) dans une seule interface unifiée.</p>
+                    <ul>
+                        <li data-i18n="feature1_li1">Boîte de réception unifiée</li>
+                        <li data-i18n="feature1_li2">Dossiers personnalisés (iCloud, Gmail...)</li>
+                        <li data-i18n="feature1_li3">Signatures et avatars par compte</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-accounts-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-accounts-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-accounts-light.png" alt="Comptes Nuntia" class="screenshot" data-target="screenshot-accounts">
+                </div>
+            </div>
+
+            <div class="feature-row reverse reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature2_title">Filtres et étiquettes</h3>
+                    <p data-i18n="feature2_desc">Créez des filtres à la Thunderbird : logique ET/OU, conditions multiples (expéditeur, sujet, statut anti-spam...), actions enchaînées et application aux mails existants.</p>
+                    <ul>
+                        <li data-i18n="feature2_li1">Logique ET/OU configurable</li>
+                        <li data-i18n="feature2_li2">Conditions et actions multiples</li>
+                        <li data-i18n="feature2_li3">Exécution sur les mails existants</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-filters-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-filters-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-filters-light.png" alt="Filtres Nuntia" class="screenshot" data-target="screenshot-filters">
+                </div>
+            </div>
+
+            <div class="feature-row reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature3_title">Détection de phishing à 3 niveaux</h3>
+                    <p data-i18n="feature3_desc">Nuntia analyse chaque mail (heuristique locale + base de domaines de phishing) et classe chaque message en Légitime, Suspect ou Phishing. Vos contacts connus sont automatiquement exemptés.</p>
+                    <ul>
+                        <li data-i18n="feature3_li1">Base de phishing mise à jour automatiquement</li>
+                        <li data-i18n="feature3_li2">3 niveaux : Légitime / Suspect / Phishing</li>
+                        <li data-i18n="feature3_li3">Vérification SPF/DKIM/DMARC</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-phishing-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-phishing-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-phishing-light.png" alt="Détection phishing Nuntia" class="screenshot" data-target="screenshot-phishing">
+                </div>
+            </div>
+
+            <div class="feature-row reverse reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature4_title">Confort et personnalisation</h3>
+                    <p data-i18n="feature4_desc">Thème clair/sombre automatique, animations configurables, sons d'interface, filtre anti-spam local et 8 langues d'interface.</p>
+                    <ul>
+                        <li data-i18n="feature4_li1">Thème Deepin natif + mode sombre</li>
+                        <li data-i18n="feature4_li2">Sons et animations désactivables</li>
+                        <li data-i18n="feature4_li3">FR, EN, DE, ES, JA, PT, TH, ZH</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-settings-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-settings-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-settings-light.png" alt="Réglages Nuntia" class="screenshot" data-target="screenshot-settings">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INSTALL ===== -->
+    <section id="install" class="install">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="install_title">Installation en 2 minutes</h2>
+                <p data-i18n="install_subtitle"></p>
+            </div>
+
+            <div class="code-block reveal">
+                <pre><code># 1. Télécharger le paquet
+https://github.com/coatimundiapps/Nuntia/releases/latest/
+
+# 2. L'installer
+sudo dpkg -i coati-nuntia_0.4.0-beta1_all.deb
+
+# 3. Corriger les dépendances si nécessaire
+sudo apt install -f</code></pre>
+            </div>
+
+            <p class="install-note reveal" data-i18n="install_note"></p>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="contact_title">Contact</h2>
+                <p data-i18n="contact_desc"></p>
+            </div>
+            <div class="reveal">
+                <a href="https://github.com/coatimundiapps/Nuntia/issues" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="contact_btn">Ouvrir un ticket sur GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/coatimundi-logo.png" alt="CoatiMundi" class="footer-logo">
+                    <p data-i18n="footer_license"></p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/coatimundiapps/Nuntia" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://github.com/coatimundiapps/Nuntia/issues" target="_blank" rel="noopener" data-i18n="footer_bug">Signaler un bug</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Capture d'écran agrandie">
+    </div>
+
+    <script src="js/i18n-nuntia.js"></script>
+    <script src="js/site2.js"></script>
+</body>
+</html>

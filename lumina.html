@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina — Nettoyez votre système en toute sécurité</title>
+    <meta name="description" content="Lumina est une application GTK4 pour nettoyer, analyser et optimiser votre système Deepin Linux en toute sécurité.">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" type="image/png" href="assets/lumina-icon.png">
+
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/coatimundi-logo-200.png" alt="CoatiMundi" class="logo-img">
+                </a>
+
+                <button class="nav-toggle" aria-label="Menu">☰</button>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+                    <li><a href="nuntia.html" data-i18n="nav_nuntia">Nuntia</a></li>
+                    <li><a href="luma.html" data-i18n="nav_luma">Luma</a></li>
+                    <li><a href="endura.html" data-i18n="nav_endura">Endura</a></li>
+                    <li><a href="lumina.html" data-i18n="nav_lumina" class="active">Lumina</a></li>
+                    <li><a href="https://github.com/coatimundiapps" target="_blank" rel="noopener">GitHub ↗</a></li>
+                </ul>
+
+                <div class="lang-selector">
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="zh">中</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-icon-container reveal">
+                <img src="assets/lumina.svg" alt="Icône Lumina" class="hero-icon">
+            </div>
+
+            <h1 class="reveal" style="--d:.08s" data-i18n="hero_title">Lumina</h1>
+            <p class="reveal" style="--d:.14s" data-i18n="hero_subtitle"></p>
+
+            <div class="hero-buttons reveal" style="--d:.2s">
+                <a href="#features" class="btn btn-primary" data-i18n="hero_btn_features">Découvrir les fonctionnalités</a>
+                <a href="#install" class="btn btn-secondary" data-i18n="hero_btn_install">Installation</a>
+                <a href="https://github.com/coatimundiapps/Lumina/issues" class="btn btn-secondary" target="_blank" rel="noopener" data-i18n="footer_bug">Signaler un bug</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="features_title"></h2>
+                <p data-i18n="features_subtitle"></p>
+            </div>
+
+            <div class="feature-row reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature1_title">Un tableau de bord complet</h3>
+                    <p data-i18n="feature1_desc">Visualisez la répartition de l'espace disque de vos dossiers, l'espace total nettoyé et la date de votre dernier nettoyage en un coup d'œil.</p>
+                    <ul>
+                        <li data-i18n="feature1_li1">Répartition de l'espace par dossier</li>
+                        <li data-i18n="feature1_li2">Graphique interactif et animé</li>
+                        <li data-i18n="feature1_li3">Statistiques du dernier nettoyage</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-dashboard2-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-dashboard2-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-dashboard2-light.png" alt="Tableau de bord Lumina" class="screenshot" data-target="screenshot-dashboard2">
+                </div>
+            </div>
+
+            <div class="feature-row reverse reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature2_title">Nettoyage intelligent</h3>
+                    <p data-i18n="feature2_desc">Lumina analyse plus de 200 règles (caches, corbeille, miniatures, logs) pour vous proposer uniquement ce qui peut être supprimé sans risque.</p>
+                    <ul>
+                        <li data-i18n="feature2_li1">Plus de 200 règles de nettoyage</li>
+                        <li data-i18n="feature2_li2">Sélection fine par catégorie</li>
+                        <li data-i18n="feature2_li3">Nettoyage des caches applicatifs</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-cleaning-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-cleaning-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-cleaning-light.png" alt="Nettoyage Lumina" class="screenshot" data-target="screenshot-cleaning">
+                </div>
+            </div>
+
+            <div class="feature-row reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature3_title">Doublons et gros fichiers</h3>
+                    <p data-i18n="feature3_desc">Trouvez les fichiers identiques et les fichiers volumineux qui prennent de la place sur votre disque. Supprimez-les en toute sécurité.</p>
+                    <ul>
+                        <li data-i18n="feature3_li1">Recherche par hash (MD5)</li>
+                        <li data-i18n="feature3_li2">Fichiers volumineux triés par taille</li>
+                        <li data-i18n="feature3_li3">Suppression sécurisée avec confirmation</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-duplicates-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-duplicates-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-duplicates-light.png" alt="Doublons Lumina" class="screenshot" data-target="screenshot-duplicates">
+                </div>
+            </div>
+
+            <div class="feature-row reverse reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature4_title">Administration système</h3>
+                    <p data-i18n="feature4_desc">Nettoyez les logs système (journal systemd, archives .gz, logs actifs) en toute sécurité, avec demande de mot de passe via polkit.</p>
+                    <ul>
+                        <li data-i18n="feature4_li1">Nettoyage des logs système</li>
+                        <li data-i18n="feature4_li2">Intégration polkit (mot de passe sécurisé)</li>
+                        <li data-i18n="feature4_li3">Aucune donnée personnelle affectée</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-admin-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-admin-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-admin-light.png" alt="Administration Lumina" class="screenshot" data-target="screenshot-admin">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INSTALL ===== -->
+    <section id="install" class="install">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="install_title">Installation en 2 minutes</h2>
+                <h2>(Soon)</h2>
+                <p data-i18n="install_subtitle"></p>
+            </div>
+
+            <div class="code-block reveal">
+                <pre><code># 1. Télécharger le paquet
+https://github.com/coatimundiapps/Lumina/releases/latest/
+
+# 2. L'installer
+sudo dpkg -i coati-lumina_0.6.0_all.deb
+
+# 3. Corriger les dépendances si nécessaire
+sudo apt install -f</code></pre>
+            </div>
+
+            <p class="install-note reveal" data-i18n="install_note"></p>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="contact_title">Contact</h2>
+                <p data-i18n="contact_desc"></p>
+            </div>
+            <div class="reveal">
+                <a href="https://github.com/coatimundiapps/Lumina/issues" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="contact_btn">Ouvrir un ticket sur GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/coatimundi-logo.png" alt="CoatiMundi" class="footer-logo">
+                    <p data-i18n="footer_license"></p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/coatimundiapps/Lumina" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://github.com/coatimundiapps/Lumina/issues" target="_blank" rel="noopener" data-i18n="footer_bug">Signaler un bug</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Capture d'écran agrandie">
+    </div>
+
+    <script src="js/i18n-lumina.js"></script>
+    <script src="js/site2.js"></script>
+</body>
+</html>

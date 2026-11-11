@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endura — Prenez le contrôle de votre batterie</title>
+    <meta name="description" content="Endura est une application Linux pour surveiller la santé de votre batterie, contrôler la limite de charge et prolonger sa durée de vie. Compatible avec Deepin et GTK.">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" type="image/png" href="assets/endura-icon.png">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/coatimundi-logo-200.png" alt="CoatiMundi" class="logo-img">
+                </a>
+
+                <button class="nav-toggle" aria-label="Menu">☰</button>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+                    <li><a href="nuntia.html" data-i18n="nav_nuntia">Nuntia</a></li>
+                    <li><a href="luma.html" data-i18n="nav_luma">Luma</a></li>
+                    <li><a href="endura.html" data-i18n="nav_endura" class="active">Endura</a></li>
+                    <li><a href="lumina.html" data-i18n="nav_lumina">Lumina</a></li>
+                    <li><a href="https://github.com/coatimundiapps" target="_blank" rel="noopener">GitHub ↗</a></li>
+                </ul>
+
+                <div class="lang-selector">
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="zh">中</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-icon-container reveal">
+                <img src="assets/endura-icon.png" alt="Icône Endura" class="hero-icon">
+            </div>
+
+            <h1 class="reveal" style="--d:.08s" data-i18n="hero_title">Endura</h1>
+            <p class="reveal" style="--d:.14s" data-i18n="hero_subtitle"></p>
+
+            <div class="hero-buttons reveal" style="--d:.2s">
+                <a href="#features" class="btn btn-primary" data-i18n="hero_btn_features">Découvrir les fonctionnalités</a>
+                <a href="#install" class="btn btn-secondary" data-i18n="hero_btn_install">Installation</a>
+                <a href="https://github.com/coatimundiapps/Endura/issues" class="btn btn-secondary" target="_blank" rel="noopener" data-i18n="footer_bug">Signaler un bug</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="features_title"></h2>
+                <p data-i18n="features_subtitle"></p>
+            </div>
+
+            <div class="feature-row reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature1_title">Un tableau de bord complet</h3>
+                    <p data-i18n="feature1_desc">Visualisez en un coup d'œil la santé de votre batterie, son niveau de charge, sa température et sa consommation en temps réel.</p>
+                    <ul>
+                        <li data-i18n="feature1_li1">Jauge de santé et niveau de charge</li>
+                        <li data-i18n="feature1_li2">Graphiques en temps réel (Cairo)</li>
+                        <li data-i18n="feature1_li3">Statistiques détaillées par batterie</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-dashboard-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-dashboard-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-dashboard-light.png" alt="Tableau de bord Endura" class="screenshot" data-target="screenshot-dashboard">
+                </div>
+            </div>
+
+            <div class="feature-row reverse reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature2_title">Contrôle avancé de la charge</h3>
+                    <p data-i18n="feature2_desc">Limitez la charge à 80% pour prolonger la durée de vie de votre batterie. Activez le <strong>Sailing Mode</strong> pour définir une plage de charge (ex: 75-80%) et éviter les micro-cycles.</p>
+                    <ul>
+                        <li data-i18n="feature2_li1">Limite de charge manuelle</li>
+                        <li data-i18n="feature2_li2">Sailing Mode (si supporté par le matériel)</li>
+                        <li data-i18n="feature2_li3">Notifications à la limite atteinte</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-charge-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-charge-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-charge-light.png" alt="Contrôle de charge Endura" class="screenshot" data-target="screenshot-charge">
+                </div>
+            </div>
+
+            <div class="feature-row reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature3_title">Informations techniques détaillées</h3>
+                    <p data-i18n="feature3_desc">Accédez à toutes les données brutes rapportées par votre système : fabricant, modèle, numéro de série, capacité nominale, charge actuelle, tension et nombre de cycles.</p>
+                    <ul>
+                        <li data-i18n="feature3_li1">Spécifications de la batterie</li>
+                        <li data-i18n="feature3_li2">Détails de la santé et de la charge</li>
+                        <li data-i18n="feature3_li3">Graphiques temps réel du niveau et de la puissance</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-techinfo-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-techinfo-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-techinfo-light.png" alt="Informations techniques Endura" class="screenshot" data-target="screenshot-techinfo">
+                </div>
+            </div>
+
+            <div class="feature-row reverse reveal">
+                <div class="feature-text">
+                    <h3 data-i18n="feature4_title">Calibration et historique</h3>
+                    <p data-i18n="feature4_desc">Recalibrez votre batterie en un clic avec un cycle complet (100% → 10% → 100%). Consultez l'historique de votre santé sur 30 jours et exportez vos données.</p>
+                    <ul>
+                        <li data-i18n="feature4_li1">Calibration automatique</li>
+                        <li data-i18n="feature4_li2">Historique SQLite 24/7 via un daemon</li>
+                        <li data-i18n="feature4_li3">Graphiques et tendances mensuelles</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <div class="theme-switcher">
+                        <button class="theme-thumb active" data-target="screenshot-history-light">☀️ Clair</button>
+                        <button class="theme-thumb" data-target="screenshot-history-dark">🌙 Sombre</button>
+                    </div>
+                    <img src="assets/screenshot-history-light.png" alt="Historique Endura" class="screenshot" data-target="screenshot-history">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INSTALL ===== -->
+    <section id="install" class="install">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="install_title">Installation en 2 minutes</h2>
+                <p data-i18n="install_subtitle"></p>
+            </div>
+
+            <div class="code-block reveal">
+                <pre><code># 1. Télécharger le paquet
+https://github.com/coatimundiapps/Endura/releases/latest/
+
+# 2. L'installer
+sudo dpkg -i endura_2.0.0_all.deb
+
+# 3. Corriger les dépendances si nécessaire
+sudo apt install -f</code></pre>
+            </div>
+
+            <p class="install-note reveal" data-i18n="install_note"></p>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="contact_title">Contact</h2>
+                <p data-i18n="contact_desc"></p>
+            </div>
+            <div class="reveal">
+                <a href="https://github.com/coatimundiapps/Endura/issues" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="contact_btn">Ouvrir un ticket sur GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/coatimundi-logo.png" alt="CoatiMundi" class="footer-logo">
+                    <p data-i18n="footer_license"></p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/coatimundiapps/Endura" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://github.com/coatimundiapps/Endura/issues" target="_blank" rel="noopener" data-i18n="footer_bug">Signaler un bug</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Capture d'écran agrandie">
+    </div>
+
+    <script src="js/i18n-endura.js"></script>
+    <script src="js/site2.js"></script>
+</body>
+</html>

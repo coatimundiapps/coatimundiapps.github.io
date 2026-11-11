@@ -3,448 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maintenance en cours — CoatiMundi</title>
-    <meta name="description" content="The new site is coming soon. We are currently performing maintenance.">
-    <meta name="robots" content="noindex, nofollow">
+    <title>CoatiMundi — Applications élégantes pour Deepin Linux</title>
+    <meta name="description" content="Lumina, Endura, Luma et Nuntia — des applications élégantes et natives pour nettoyer, optimiser, prendre soin de votre système, organiser votre temps et gérer vos mails sous Deepin Linux.">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="assets/coatimundi-logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* ============================================================
-           RESET & BASE
-           ============================================================ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #0A2B4E 0%, #1A56DB 100%);
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-            overflow: hidden;
-            position: relative;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ============================================================
-           FORMES DÉCORATIVES EN ARRIÈRE-PLAN
-           ============================================================ */
-        .bg-shape {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .shape-1 {
-            width: 500px;
-            height: 500px;
-            top: -200px;
-            right: -150px;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .shape-2 {
-            width: 400px;
-            height: 400px;
-            bottom: -150px;
-            left: -100px;
-            animation: float 10s ease-in-out infinite reverse;
-        }
-
-        .shape-3 {
-            width: 200px;
-            height: 200px;
-            top: 50%;
-            left: 10%;
-            background: rgba(14, 165, 233, 0.1);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(5deg); }
-        }
-
-        /* ============================================================
-           CONTENEUR PRINCIPAL
-           ============================================================ */
-        .maintenance-container {
-            position: relative;
-            z-index: 1;
-            max-width: 680px;
-            width: 100%;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 32px;
-            padding: 60px 48px;
-            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4);
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ============================================================
-           LOGO
-           ============================================================ */
-        .logo {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 32px;
-        }
-
-        .logo img {
-            height: 70px;
-            width: auto;
-            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
-        }
-
-        /* ============================================================
-           ICÔNE DE MAINTENANCE
-           ============================================================ */
-        .maintenance-icon {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 32px;
-            background: rgba(255, 255, 255, 0.12);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            animation: pulse 2.5s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2); }
-            50% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); }
-        }
-
-        /* ============================================================
-           TYPOGRAPHIE
-           ============================================================ */
-        .maintenance-container h1 {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #ffffff 0%, #DBEAFE 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .maintenance-container .subtitle {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 40px;
-            line-height: 1.6;
-            max-width: 480px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* ============================================================
-           BARRE DE PROGRESSION
-           ============================================================ */
-        .progress-section {
-            margin-bottom: 40px;
-        }
-
-        .progress-label {
-            display: flex;
-            justify-content: space-between;
-            font-size: 13px;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 50px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .progress-fill {
-            height: 100%;
-            width: 75%;
-            background: linear-gradient(90deg, #0EA5E9, #10B981);
-            border-radius: 50px;
-            position: relative;
-            animation: shimmer 2s infinite;
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
-        }
-
-        .progress-fill::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 255, 255, 0.4),
-                transparent
-            );
-            animation: shimmerMove 1.5s infinite;
-        }
-
-        @keyframes shimmerMove {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        /* ============================================================
-           COMPTE À REBOURS
-           ============================================================ */
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .countdown-item {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 16px;
-            padding: 16px 20px;
-            min-width: 80px;
-            transition: transform 0.2s;
-        }
-
-        .countdown-item:hover {
-            transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .countdown-number {
-            font-size: 32px;
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 4px;
-            color: #ffffff;
-        }
-
-        .countdown-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.6);
-            font-weight: 600;
-        }
-
-        /* ============================================================
-           BOUTONS
-           ============================================================ */
-        .buttons {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 15px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            border: 2px solid transparent;
-            cursor: pointer;
-            font-family: inherit;
-        }
-
-        .btn-primary {
-            background: #ffffff;
-            color: #1A56DB;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-            background: #F0F4FF;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: #ffffff;
-            border-color: rgba(255, 255, 255, 0.4);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #ffffff;
-            transform: translateY(-2px);
-        }
-
-        /* ============================================================
-           FOOTER
-           ============================================================ */
-        .footer-note {
-            margin-top: 40px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.6;
-        }
-
-        .footer-note a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-
-        .footer-note a:hover {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-
-        /* ============================================================
-           RESPONSIVE
-           ============================================================ */
-        @media (max-width: 640px) {
-            .maintenance-container {
-                padding: 40px 24px;
-                border-radius: 24px;
-            }
-
-            .maintenance-container h1 {
-                font-size: 30px;
-            }
-
-            .maintenance-container .subtitle {
-                font-size: 16px;
-            }
-
-            .maintenance-icon {
-                width: 80px;
-                height: 80px;
-                font-size: 38px;
-            }
-
-            .logo img {
-                height: 55px;
-            }
-
-            .countdown {
-                gap: 10px;
-            }
-
-            .countdown-item {
-                padding: 12px 14px;
-                min-width: 65px;
-            }
-
-            .countdown-number {
-                font-size: 24px;
-            }
-
-            .countdown-label {
-                font-size: 10px;
-            }
-
-            .btn {
-                padding: 12px 22px;
-                font-size: 14px;
-            }
-        }
-    </style>
 </head>
 <body>
 
-    <!-- Formes décoratives -->
-    <div class="bg-shape shape-1"></div>
-    <div class="bg-shape shape-2"></div>
-    <div class="bg-shape shape-3"></div>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/coatimundi-logo-200.png" alt="CoatiMundi" class="logo-img">
+                </a>
 
-    <!-- Conteneur principal -->
-    <div class="maintenance-container">
+                <button class="nav-toggle" aria-label="Menu">☰</button>
 
-        <!-- Logo -->
-        <div class="logo">
-            <img src="assets/coatimundi-logo.png" alt="CoatiMundi Logo">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active" data-i18n="nav_home">Accueil</a></li>
+                    <li><a href="nuntia.html" data-i18n="nav_nuntia">Nuntia</a></li>
+                    <li><a href="luma.html" data-i18n="nav_luma">Luma</a></li>
+                    <li><a href="endura.html" data-i18n="nav_endura">Endura</a></li>
+                    <li><a href="lumina.html" data-i18n="nav_lumina">Lumina</a></li>
+                    <li><a href="https://github.com/coatimundiapps" target="_blank" rel="noopener">GitHub ↗</a></li>
+                </ul>
+
+                <div class="lang-selector">
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="zh">中</button>
+                </div>
+            </nav>
         </div>
+    </header>
 
-        <!-- Icône de maintenance -->
-        <div class="maintenance-icon">
-            🚧
-        </div>
-
-        <!-- Titre -->
-        <h1>Work in progress</h1>
-        <p class="subtitle">
-            The new CoatiMundi website is coming very soon. We are currently making some improvements to provide you with a better experience.
-        </p>
-
-        <!-- Barre de progression -->
-        <div class="progress-section">
-            <div class="progress-label">
-                <span>Progression</span>
-                <span>75%</span>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-icon-container reveal" style="--d:.08s">
+                <img src="assets/coatimundi-logo.png" alt="CoatiMundi" class="hero-icon">
             </div>
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
+
+            <p class="reveal" style="--d:.2s" data-i18n="hero_subtitle">Des applications gratuites, élégantes et natives pour votre système Deepin Linux.</p>
+
+            <div class="hero-buttons reveal" style="--d:.26s">
+                <a href="#apps" class="btn btn-primary" data-i18n="hero_btn_apps">Découvrir les applications</a>
+                <a href="https://github.com/coatimundiapps" class="btn btn-secondary" target="_blank" rel="noopener" data-i18n="hero_btn_github">Voir sur GitHub</a>
             </div>
         </div>
+    </section>
 
+    <!-- ===== APPS ===== -->
+    <section id="apps" class="features">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="apps_title">Mes applications</h2>
+            </div>
 
-        <!-- Boutons -->
-        <div class="buttons">
-            <a href="https://github.com/coatimundiapps" target="_blank" class="btn btn-primary">
-                <span>🐙</span> Voir sur GitHub
-            </a>
+            <div class="apps-grid">
 
+                <!-- APP : NUNTIA -->
+                <article class="app-card reveal" style="--d:0s">
+                    <div class="feature-image">
+                        <div class="theme-switcher">
+                            <button class="theme-thumb active" data-target="screenshot-nuntia-inbox-light">☀️ Clair</button>
+                            <button class="theme-thumb" data-target="screenshot-nuntia-inbox-dark">🌙 Sombre</button>
+                        </div>
+                        <img src="assets/screenshot-nuntia-inbox-light.png" alt="Nuntia" class="screenshot" data-target="screenshot-nuntia-inbox">
+                    </div>
+                    <div class="app-content">
+                        <h3 data-i18n="app4_title">Nuntia</h3>
+                        <p data-i18n="app4_desc">Nuntia est un client mail moderne, natif et élégant pour Deepin Linux. Multi-comptes IMAP/SMTP, filtres avancés, détection de phishing et interface en 8 langues.</p>
+                        <ul class="feature-text">
+                            <li data-i18n="app4_li1">Multi-comptes et boîte de réception unifiée</li>
+                            <li data-i18n="app4_li2">Filtres avancés et étiquettes</li>
+                            <li data-i18n="app4_li3">Détection de phishing à 3 niveaux</li>
+                        </ul>
+                        <div class="hero-buttons">
+                            <a href="nuntia.html" class="btn btn-primary" data-i18n="btn_learn_more">En savoir plus</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- APP : LUMA -->
+                <article class="app-card reveal" style="--d:.1s">
+                    <div class="feature-image">
+                        <div class="theme-switcher">
+                            <button class="theme-thumb active" data-target="screenshot-luma-month-light">☀️ Clair</button>
+                            <button class="theme-thumb" data-target="screenshot-luma-month-dark">🌙 Sombre</button>
+                        </div>
+                        <img src="assets/screenshot-luma-month-light.png" alt="Luma" class="screenshot" data-target="screenshot-luma-month">
+                    </div>
+                    <div class="app-content">
+                        <h3 data-i18n="app3_title">Luma</h3>
+                        <p data-i18n="app3_desc">Luma est un calendrier moderne, élégant et natif pour Linux. Synchronisez vos calendriers CalDAV, gérez vos événements en un clic et gardez une vue claire sur votre emploi du temps.</p>
+                        <ul class="feature-text">
+                            <li data-i18n="app3_li1">Vues Mois, Semaine et Jour</li>
+                            <li data-i18n="app3_li2">Synchronisation CalDAV native et abonnements .ics</li>
+                            <li data-i18n="app3_li3">Drag &amp; drop, recherche et rappels</li>
+                        </ul>
+                        <div class="hero-buttons">
+                            <a href="luma.html" class="btn btn-primary" data-i18n="btn_learn_more">En savoir plus</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- APP : ENDURA -->
+                <article class="app-card reveal" style="--d:.2s">
+                    <div class="feature-image">
+                        <div class="theme-switcher">
+                            <button class="theme-thumb active" data-target="screenshot-dashboard-light">☀️ Clair</button>
+                            <button class="theme-thumb" data-target="screenshot-dashboard-dark">🌙 Sombre</button>
+                        </div>
+                        <img src="assets/screenshot-dashboard-light.png" alt="Endura" class="screenshot" data-target="screenshot-dashboard">
+                    </div>
+                    <div class="app-content">
+                        <h3 data-i18n="app2_title">Endura</h3>
+                        <p data-i18n="app2_desc">Endura centralise la surveillance de votre batterie, la gestion de la limite de charge et la protection thermique pour que votre ordinateur portable reste en bonne santé plus longtemps.</p>
+                        <ul class="feature-text">
+                            <li data-i18n="app2_li1">Surveillance de la santé de la batterie en temps réel</li>
+                            <li data-i18n="app2_li2">Contrôle avancé de la charge (Sailing Mode)</li>
+                            <li data-i18n="app2_li3">Calibration et historique des données</li>
+                        </ul>
+                        <div class="hero-buttons">
+                            <a href="endura.html" class="btn btn-primary" data-i18n="btn_learn_more">En savoir plus</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- APP : LUMINA -->
+                <article class="app-card reveal" style="--d:.3s">
+                    <div class="feature-image">
+                        <div class="theme-switcher">
+                            <button class="theme-thumb active" data-target="screenshot-dashboard2-light">☀️ Clair</button>
+                            <button class="theme-thumb" data-target="screenshot-dashboard2-dark">🌙 Sombre</button>
+                        </div>
+                        <img src="assets/screenshot-dashboard2-light.png" alt="Lumina" class="screenshot" data-target="screenshot-dashboard2">
+                    </div>
+                    <div class="app-content">
+                        <h3 data-i18n="app1_title">Lumina</h3>
+                        <p data-i18n="app1_desc">Lumina nettoie, analyse et optimise votre système Deepin Linux en toute sécurité. Il vous aide à récupérer de l'espace disque et à garder votre système propre et rapide.</p>
+                        <ul class="feature-text">
+                            <li data-i18n="app1_li1">Tableau de bord complet de l'espace disque</li>
+                            <li data-i18n="app1_li2">Nettoyage intelligent (caches, logs, corbeille)</li>
+                            <li data-i18n="app1_li3">Recherche de doublons et gros fichiers</li>
+                        </ul>
+                        <div class="hero-buttons">
+                            <a href="lumina.html" class="btn btn-primary" data-i18n="btn_learn_more">En savoir plus</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
         </div>
+    </section>
 
-        <!-- Footer note -->
-        <div class="footer-note">
-            <p>
-                © 2026 CoatiMundi - David Tavares. Tous droits réservés.
-            </p>
+    <!-- ===== DEEPIN PROMO ===== -->
+    <section id="deepin" class="deepin-promo">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="deepin_title">Propulsé par Deepin Linux</h2>
+                <p data-i18n="deepin_desc">Un environnement de bureau moderne, élégant et open source — celui pour lequel CoatiMundi est conçu.</p>
+            </div>
+
+            <div class="deepin-card reveal">
+                <div class="deepin-visual">
+                    <img src="assets/deepin25-dde-desktop.jpg" alt="Deepin Linux" class="deepin-img">
+                </div>
+                <div class="deepin-content">
+                    <p data-i18n="deepin_p1">Deepin est une distribution Linux moderne, élégante et open source développée par Wuhan Deepin Technology. Connue pour son magnifique environnement de bureau <strong>Deepin Desktop Environment (DDE)</strong>, elle offre une expérience fluide et raffinée dès l'installation.</p>
+                    <p data-i18n="deepin_p2">Mes applications sont pensées pour s'intégrer naturellement à Deepin — en respectant son langage visuel, son écosystème et en tirant parti de l'intégration native.</p>
+                    <ul class="deepin-features">
+                        <li><span class="check">✓</span> <span data-i18n="deepin_feat1">Bureau DDE élégant et intuitif</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="deepin_feat2">Prêt à l'emploi, sans configuration</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="deepin_feat3">Entièrement open source et gratuit</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="deepin_feat4">Communauté mondiale et active</span></li>
+                    </ul>
+                    <div class="hero-buttons">
+                        <a href="https://www.deepin.org" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="deepin_cta">Visiter deepin.org</a>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 data-i18n="contact_title">Contact</h2>
+                <p data-i18n="contact_desc">Une question, une suggestion ou un bug à signaler ?</p>
+            </div>
+            <div class="reveal">
+                <a href="https://github.com/coatimundiapps" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="contact_btn">Ouvrir un ticket sur GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/coatimundi-logo.png" alt="CoatiMundi" class="footer-logo">
+                    <p data-i18n="footer_license">© 2026 CoatiMundi - David Tavares.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/coatimundiapps" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Capture d'écran agrandie">
     </div>
 
+    <script>
+    window.TRANSLATIONS = {
+        en: {
+            "nav_home": "Home", "nav_nuntia": "Nuntia", "nav_endura": "Endura", "nav_lumina": "Lumina", "nav_luma": "Luma",
+            "hero_badge": "Four native apps · Built for Deepin",
+            "hero_subtitle": "Free, Elegant and native applications for your Deepin Linux system.",
+            "hero_btn_apps": "Discover the apps",
+            "hero_btn_github": "View on GitHub",
+            "app4_title": "Nuntia",
+            "app4_desc": "Nuntia is a modern, native and elegant email client for Deepin Linux. Multi-account IMAP/SMTP, advanced filters, phishing detection and an interface in 8 languages.",
+            "app4_li1": "Multi-account and unified inbox",
+            "app4_li2": "Advanced filters and labels",
+            "app4_li3": "Three-level phishing detection",
+            "apps_title": "My applications",
+            "app1_title": "Lumina",
+            "app1_desc": "Lumina cleans, analyzes, and optimizes your Deepin Linux system safely. It helps you recover disk space and keep your system clean and fast.",
+            "app1_li1": "Complete disk space dashboard",
+            "app1_li2": "Smart cleaning (caches, logs, trash)",
+            "app1_li3": "Duplicate and large file search",
+            "app2_title": "Endura",
+            "app2_desc": "Endura centralizes battery monitoring, charge limit management, and thermal protection so your laptop stays healthy for longer.",
+            "app2_li1": "Real-time battery health monitoring",
+            "app2_li2": "Advanced charge control (Sailing Mode)",
+            "app2_li3": "Calibration and data history",
+            "app3_title": "Luma",
+            "app3_desc": "Luma is a modern, elegant, native calendar for Linux. Sync your CalDAV calendars, manage events in one click, and keep a clear view of your schedule.",
+            "app3_li1": "Month, Week, and Day views",
+            "app3_li2": "Native CalDAV sync and .ics subscriptions",
+            "app3_li3": "Drag & drop, search, and reminders",
+            "btn_learn_more": "Learn more",
+            "contact_title": "Contact",
+            "contact_desc": "A question, a suggestion, or a bug to report?",
+            "contact_btn": "Open a ticket on GitHub",
+            "footer_license": "© 2026 CoatiMundi - David Tavares.",
+            "deepin_title": "Powered by Deepin Linux",
+            "deepin_desc": "A modern, elegant, and open-source desktop environment — the one CoatiMundi is built for.",
+            "deepin_p1": "Deepin is a modern, elegant, and open-source Linux distribution developed by Wuhan Deepin Technology. Known for its beautiful <strong>Deepin Desktop Environment (DDE)</strong>, it offers a smooth and refined experience right out of the box.",
+            "deepin_p2": "My apps are designed to feel at home on Deepin — respecting its visual language, its ecosystem, and taking advantage of native integration.",
+            "deepin_feat1": "Elegant and intuitive DDE desktop",
+            "deepin_feat2": "Ready to use, no configuration needed",
+            "deepin_feat3": "Fully open source and free",
+            "deepin_feat4": "Active global community",
+            "deepin_cta": "Visit deepin.org"
+        },
+        fr: {
+            "nav_home": "Accueil", "nav_nuntia": "Nuntia", "nav_endura": "Endura", "nav_lumina": "Lumina", "nav_luma": "Luma",
+            "hero_badge": "Quatre applications natives · Faites pour Deepin",
+            "hero_subtitle": "Des applications gratuites, élégantes et natives pour votre système Deepin Linux.",
+            "hero_btn_apps": "Découvrir les applications",
+            "hero_btn_github": "Voir sur GitHub",
+            "app4_title": "Nuntia",
+            "app4_desc": "Nuntia est un client mail moderne, natif et élégant pour Deepin Linux. Multi-comptes IMAP/SMTP, filtres avancés, détection de phishing et interface en 8 langues.",
+            "app4_li1": "Multi-comptes et boîte de réception unifiée",
+            "app4_li2": "Filtres avancés et étiquettes",
+            "app4_li3": "Détection de phishing à 3 niveaux",
+            "apps_title": "Mes applications",
+            "app1_title": "Lumina",
+            "app1_desc": "Lumina nettoie, analyse et optimise votre système Deepin Linux en toute sécurité. Il vous aide à récupérer de l'espace disque et à garder votre système propre et rapide.",
+            "app1_li1": "Tableau de bord complet de l'espace disque",
+            "app1_li2": "Nettoyage intelligent (caches, logs, corbeille)",
+            "app1_li3": "Recherche de doublons et gros fichiers",
+            "app2_title": "Endura",
+            "app2_desc": "Endura centralise la surveillance de votre batterie, la gestion de la limite de charge et la protection thermique pour que votre ordinateur portable reste en bonne santé plus longtemps.",
+            "app2_li1": "Surveillance de la santé de la batterie en temps réel",
+            "app2_li2": "Contrôle avancé de la charge (Sailing Mode)",
+            "app2_li3": "Calibration et historique des données",
+            "app3_title": "Luma",
+            "app3_desc": "Luma est un calendrier moderne, élégant et natif pour Linux. Synchronisez vos calendriers CalDAV, gérez vos événements en un clic et gardez une vue claire sur votre emploi du temps.",
+            "app3_li1": "Vues Mois, Semaine et Jour",
+            "app3_li2": "Synchronisation CalDAV native et abonnements .ics",
+            "app3_li3": "Drag & drop, recherche et rappels",
+            "btn_learn_more": "En savoir plus",
+            "contact_title": "Contact",
+            "contact_desc": "Une question, une suggestion ou un bug à signaler ?",
+            "contact_btn": "Ouvrir un ticket sur GitHub",
+            "footer_license": "© 2026 CoatiMundi - David Tavares.",
+            "deepin_title": "Propulsé par Deepin Linux",
+            "deepin_desc": "Un environnement de bureau moderne, élégant et open source — celui pour lequel CoatiMundi est conçu.",
+            "deepin_p1": "Deepin est une distribution Linux moderne, élégante et open source développée par Wuhan Deepin Technology. Connue pour son magnifique environnement de bureau <strong>Deepin Desktop Environment (DDE)</strong>, elle offre une expérience fluide et raffinée dès l'installation.",
+            "deepin_p2": "Mes applications sont pensées pour s'intégrer naturellement à Deepin — en respectant son langage visuel, son écosystème et en tirant parti de l'intégration native.",
+            "deepin_feat1": "Bureau DDE élégant et intuitif",
+            "deepin_feat2": "Prêt à l'emploi, sans configuration",
+            "deepin_feat3": "Entièrement open source et gratuit",
+            "deepin_feat4": "Communauté mondiale et active",
+            "deepin_cta": "Visiter deepin.org"
+        },
+        zh: {
+            "nav_home": "首页", "nav_nuntia": "Nuntia", "nav_endura": "Endura", "nav_lumina": "Lumina", "nav_luma": "Luma",
+            "hero_badge": "四款原生应用 · 专为 Deepin 打造",
+            "hero_subtitle": "为您的 Deepin Linux 系统提供免费、优雅且原生的应用程序。",
+            "hero_btn_apps": "浏览应用",
+            "hero_btn_github": "在 GitHub 上查看",
+            "app4_title": "Nuntia",
+            "app4_desc": "Nuntia 是一款现代化、原生且优雅的 Deepin Linux 邮件客户端。支持多账户 IMAP/SMTP、高级过滤器、钓鱼检测，界面提供 8 种语言。",
+            "app4_li1": "多账户与统一收件箱",
+            "app4_li2": "高级过滤器与标签",
+            "app4_li3": "三级钓鱼检测",
+            "apps_title": "我的应用",
+            "app1_title": "Lumina",
+            "app1_desc": "Lumina 可安全地清理、分析和优化您的 Deepin Linux 系统。它帮助您恢复磁盘空间，保持系统整洁快速。",
+            "app1_li1": "完整的磁盘空间仪表盘",
+            "app1_li2": "智能清理（缓存、日志、回收站）",
+            "app1_li3": "重复文件和大文件搜索",
+            "app2_title": "Endura",
+            "app2_desc": "Endura 集中管理电池监控、充电限制管理和温度保护，让您的笔记本电脑更长时间保持健康。",
+            "app2_li1": "实时电池健康监控",
+            "app2_li2": "高级充电控制（航行模式）",
+            "app2_li3": "校准和数据历史记录",
+            "app3_title": "Luma",
+            "app3_desc": "Luma 是一款现代化、优雅的原生 Linux 日历应用。同步您的 CalDAV 日历，一键管理事件，清晰掌握您的日程安排。",
+            "app3_li1": "月、周、日视图",
+            "app3_li2": "原生 CalDAV 同步和 .ics 订阅",
+            "app3_li3": "拖放、搜索和提醒",
+            "btn_learn_more": "了解更多",
+            "contact_title": "联系方式",
+            "contact_desc": "有问题、建议或需要报告错误？",
+            "contact_btn": "在 GitHub 上提交问题",
+            "footer_license": "© 2026 CoatiMundi - David Tavares.",
+            "deepin_title": "由 Deepin Linux 驱动",
+            "deepin_desc": "一个现代、优雅且开源的桌面环境 —— CoatiMundi 专为它而设计。",
+            "deepin_p1": "Deepin 是由武汉深之度科技开发的现代、优雅且开源的 Linux 发行版。以其精美的 <strong>深度桌面环境 (DDE)</strong> 而闻名，开箱即用，带来流畅精致的体验。",
+            "deepin_p2": "我的应用专为融入 Deepin 而设计 —— 遵循其视觉语言，尊重其生态系统，并充分利用原生集成。",
+            "deepin_feat1": "优雅直观的 DDE 桌面",
+            "deepin_feat2": "开箱即用，无需配置",
+            "deepin_feat3": "完全开源且免费",
+            "deepin_feat4": "活跃的全球社区",
+            "deepin_cta": "访问 deepin.org"
+        }
+    };
+    </script>
+    <script src="js/site.js"></script>
 </body>
 </html>
