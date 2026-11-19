@@ -138,5 +138,14 @@
         } else {
             document.querySelectorAll(".reveal").forEach((el) => el.classList.add("visible"));
         }
+        /* 7. Ombre du header au scroll */
+        const header = document.querySelector("header");
+        if (header) {
+            const updateHeaderShadow = () => {
+                header.classList.toggle("scrolled", window.scrollY > 10);
+            };
+            window.addEventListener("scroll", updateHeaderShadow, { passive: true });
+            updateHeaderShadow();
+        }
     });
 })();
